@@ -1,0 +1,14 @@
+1634887889297	Delete element
+1634890901608	Delete element
+1634892039333	Rename field 'left'
+1634892066911	Rename field 'right'
+1634892146605	Rename field 'sign'
+1634893620358	Rename local variable 'a'
+1634893628554	Rename local variable 'b'
+1634893745261	Rename local variable 'c'
+1634895163665	Rename type 'CerterEvent'
+1634895211101	Rename method 'createCal'
+1634897441687	Rename field 'first_num'
+1634897453801	Rename field 'second_num'
+1634897526609	Rename local variable 'calculate_result'
+1634897677820	Delete element

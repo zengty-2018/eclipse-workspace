@@ -1,0 +1,19 @@
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class JunitTest {
+	helloworld hello = new helloworld();
+	
+	@Before
+	public void setUp() throws Exception {
+		hello.hello();
+	}
+
+	@Test
+	public void test() {
+		assertEquals(hello.getStr(), "Hello World!");
+	}
+
+}

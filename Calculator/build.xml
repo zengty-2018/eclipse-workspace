@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HelloWorld" default="run" basedir=".">
+	<target name="compile">
+		<javac srcdir="src" destdir="build/classes"/>
+	</target>
+	
+	<target name="create_jar" depends="compile">
+		<jar destfile="calc_jar" basedir="build/classes">
+		   <manifest>
+			  <attribute name="Calculator" value="Calculator"/>
+		   </manifest>
+		</jar>
+	</target>
+ 
+	<target name="run" depends="create_jar">
+		<java classname="calculator" classpath="calc_jar" fork="yes"/>
+	</target>
+</project>

@@ -1,0 +1,131 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class calculator {
+	private JTextField first_num, second_num;
+    private JLabel op, equal, result;
+    private JButton add, sub, mul, div, ok;
+    
+    public calculator(){
+    	EventQueue.invokeLater(new Runnable(){
+            public void run(){
+            	try{
+            		createCal();
+            	}catch(Exception e) {
+            		e.printStackTrace();
+            	}
+            }
+        });
+    }
+	
+	private void createCal(){
+        JFrame frame = new JFrame("Easy Calculator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        Container cp = frame.getContentPane();
+        cp.setLayout(new FlowLayout());
+
+        first_num = new JTextField("0");
+        op = new JLabel(" ");
+        second_num = new JTextField("0");
+        equal = new JLabel("=");
+        result = new JLabel(" ");
+
+        add = new JButton("+");
+        sub = new JButton("-");
+        mul = new JButton("*");
+        div = new JButton("/");
+        ok  = new JButton("OK");
+
+        first_num.setPreferredSize(new Dimension(100, 30));
+        first_num.setHorizontalAlignment(JTextField.CENTER);
+        op.setPreferredSize(new Dimension(100, 30));
+        op.setHorizontalAlignment(JLabel.CENTER);
+        second_num.setPreferredSize(new Dimension(100, 30));
+        second_num.setHorizontalAlignment(JTextField.CENTER);
+        equal.setPreferredSize(new Dimension(100, 30));
+        equal.setHorizontalAlignment(JLabel.CENTER);
+        result.setPreferredSize(new Dimension(100, 30));
+        result.setHorizontalAlignment(JLabel.CENTER);
+
+        add.setPreferredSize(new Dimension(100, 30));
+        sub.setPreferredSize(new Dimension(100, 30));
+        mul.setPreferredSize(new Dimension(100, 30));
+        div.setPreferredSize(new Dimension(100, 30));
+        ok.setPreferredSize(new Dimension(100, 30));
+
+        add.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                op.setText("+");
+            }
+        });
+        sub.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                op.setText("-");
+            }
+        });
+        mul.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                op.setText("*");
+            }
+        });
+        div.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                op.setText("/");
+            }
+        });
+        ok.addActionListener(new CerterEvent());
+
+        cp.add(first_num);
+        cp.add(op);
+        cp.add(second_num);
+        cp.add(equal);
+        cp.add(result);
+        cp.add(add);
+        cp.add(sub);
+        cp.add(mul);
+        cp.add(div);
+        cp.add(ok);
+
+        frame.setSize(new Dimension(550,120));
+        frame.setVisible(true);
+    }
+	
+	class CerterEvent implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            Double a, b, c;
+            a = Double.parseDouble(first_num.getText());
+            b = Double.parseDouble(second_num.getText());
+            String x = op.getText();
+            switch(x){
+                case "+":
+                    c = a + b;
+                    break;
+                case "-":
+                    c = a - b;
+                    break;
+                case "*":
+                    c = a * b;
+                    break;
+                case "/":
+                    c = a / b;
+                    break;
+                default:
+                    return;
+            }
+            result.setText(Double.toString(c));
+        }
+    }
+    
+    public static void main(String[] args) {
+        calculator cal = new calculator();
+
+    }
+}

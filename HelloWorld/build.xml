@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HelloWorld" default="run" basedir=".">
+	<target name="compile">
+		<javac srcdir="src/main" destdir="build/classes"/>
+	</target>
+	
+	<target name="create_jar" depends="compile">
+		<jar destfile="hello_jar" basedir="build/classes">
+		   <manifest>
+			  <attribute name="main" value="HelloWorld"/>
+		   </manifest>
+		</jar>
+	</target>
+ 
+	<target name="run" depends="create_jar">
+		<java classname="HelloWorld" classpath="hello_jar"/>
+	</target>
+</project>

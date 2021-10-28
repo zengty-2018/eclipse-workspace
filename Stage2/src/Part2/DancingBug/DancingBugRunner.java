@@ -9,8 +9,6 @@ public class DancingBugRunner {
 		int n[] = {1,2,3,4,5,6,7,8};
 		ActorWorld world = new ActorWorld();
 		DancingBug alice = new DancingBug(n);
-		alice.setColor(Color.YELLOW);
-		// DancingBug bob = new DancingBug(n);
 		world.add(new Location(9, 9), alice);
 		world.show();
 	}

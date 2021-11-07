@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
+    <fullyQualifiedTypeName name="info.gridworld.actor.Bug"/>
+    <fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
+</qualifiedTypeNameHistroy>

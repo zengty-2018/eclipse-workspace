@@ -1,3 +1,5 @@
+package ZBug;
+
 import info.gridworld.actor.Bug;
 
 /**

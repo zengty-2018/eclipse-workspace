@@ -1,3 +1,5 @@
+package ZBug;
+
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.grid.Location;
 import java.awt.Color;

@@ -13,11 +13,10 @@ public class JumperRunner{
 	public static void main(String[] args) {
 		ActorWorld world = new ActorWorld();
 		Jumper j = new Jumper();
-		j.setDirection(45);
-		world.add(new Location(4, 4), j);
-		world.add(new Location(1, 4), new Rock());
-		world.add(new Location(2, 6), new Rock());
-		world.add(new Location(2, 4), new Flower());
+		world.add(new Location(6, 4), j);
+		world.add(new Location(5, 4), new Rock());
+		world.add(new Location(0, 4), new Rock());
+		world.add(new Location(3, 4), new Flower());
 		world.show();
 	}
 }

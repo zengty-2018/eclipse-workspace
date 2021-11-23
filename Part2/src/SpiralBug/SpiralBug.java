@@ -1,3 +1,5 @@
+package SpiralBug;
+
 import info.gridworld.actor.Bug;
 
 /**

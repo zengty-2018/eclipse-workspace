@@ -1,3 +1,5 @@
+package CircleBug;
+
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.grid.Location;
 
